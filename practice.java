@@ -422,7 +422,7 @@ class Programming{
         }
     }
 }
-//  exapmle 8
+//  example 8
 class rect{
     public int length;
     public int breadth;
@@ -450,4 +450,3 @@ class rect{
         System.out.println("Area : " + (obj2.length*obj2.breadth));
     }
 }
-// exampl
