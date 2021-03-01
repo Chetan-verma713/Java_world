@@ -1,0 +1,63 @@
+package Node.Stack;
+
+public class doublylinkedlist<t>
+{
+    Node head;
+
+    public void push(t new_data)
+    {
+        Node new_node = new Node(new_data);
+        if (head == null)
+        {
+            head = new_node;
+        }
+        else
+        {
+            Node temp = head;
+            while (temp.getNext() != null)
+            {
+                temp = temp.getNext();
+            }
+            temp.setNext(new_node);
+            temp.getNext().setPrevious(new_node);
+        }
+    }
+
+    public void pop()
+    {
+
+        if (head == null)
+        {
+            System.out.println("No node exists");
+        }
+        else
+        {
+            head = head.getNext();
+        }
+    }
+
+    public void insertinbetween(t new_data, int count)
+    {
+        Node new_node = new Node(new_data);
+        Node temp = head;
+        for (int i = 0; i < count-1; i++)
+        {
+            temp = temp.getNext();
+        }
+        new_node.setNext(temp.getNext());
+        new_node.setPrevious(temp);
+        temp.setNext(new_node);
+        temp.getNext().setPrevious(new_node);
+    }
+
+    public void show()
+    {
+        Node temp = head;
+        while (temp.getNext() != null)
+        {
+            System.out.println(temp.getData());
+            temp = temp.getNext();
+        }
+        System.out.println(temp.getData());
+    }
+}
